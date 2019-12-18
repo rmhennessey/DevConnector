@@ -20,7 +20,7 @@ if (localStorage.token) {
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser())
+    store.dispatch(loadUser());
   }, []); // we need to add [] add the end so it does not keep looping - acts as a 'component did mount'
 
   return (

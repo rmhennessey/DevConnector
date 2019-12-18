@@ -24,13 +24,14 @@ router.get('/', auth, async (req, res) => {
 // @route   POST api/auth
 // @desc    Authenticate user & get token
 // @access  Public
-router.post('/', [
-  check('email', "Please include a valid email").isEmail(),
-  check(
-    'password',
-    'Password is required')
-    .exists()
-],
+router.post('/',
+  [
+    check('email', "Please include a valid email").isEmail(),
+    check(
+      'password',
+      'Password is required')
+      .exists()
+  ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
